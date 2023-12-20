@@ -1,0 +1,76 @@
+for router 1(first)
+
+interface fa0/0
+ip address 192.168.10.254 255.255.255.0
+no shut
+do wr
+
+exit
+
+interface se2/0
+ip address 192.168.40.1 255.255.255.0
+clock rate 64000
+no shut
+do wr
+
+
+
+
+for router 2(last one)
+
+interface fa0/0
+ip address 192.168.30.254 255.255.255.0
+no shut
+do wr
+
+exit
+
+interface se2/0
+ip address 192.168.50.1 255.255.255.0
+clock rate 64000
+no shut
+do wr
+
+
+for router 3(middle one)
+
+interface fa0/0
+ip address 192.168.20.254 255.255.255.0
+no shut
+do wr
+
+exit
+
+interface se2/0
+ip address 192.168.40.2 255.255.255.0
+no shut
+do wr
+
+exit
+
+interface se3/0
+ip address 192.168.50.2 255.255.255.0
+no shut
+do wr
+
+
+
+
+routing table insert in router 1
+
+ip route 192.168.20.0 255.255.255.0 192.168.40.2
+ip route 192.168.30.0 255.255.255.0 192.168.40.2
+ip route 192.168.50.0 255.255.255.0 192.168.40.2
+
+
+routing table insert in router 2
+
+ip route 192.168.10.0 255.255.255.0 192.168.50.2
+ip route 192.168.20.0 255.255.255.0 192.168.50.2
+ip route 192.168.40.0 255.255.255.0 192.168.50.2
+
+
+routing table insert in router 3
+
+ip route 192.168.10.0 255.255.255.0 192.168.40.1
+ip route 192.168.30.0 255.255.255.0 192.168.50.1

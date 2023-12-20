@@ -1,0 +1,232 @@
+Campus 1
+
+interface fa0/0
+ip address 163.146.10.254 255.255.0.0
+no shut
+do wr
+
+exit
+
+interface se2/0
+ip address 163.146.90.1 255.255.0.0
+clock rate 64000
+no shut
+do wr
+
+exit
+
+interface se3/0
+ip address 163.146.70.1 255.255.0.0
+clock rate 64000
+no shut
+do wr
+
+exit
+
+interface se6/0
+ip address 163.146.110.2 255.255.0.0
+no shut
+do wr
+
+exit
+
+
+Campus 2
+
+interface fa0/0
+ip address 163.146.20.254 255.255.0.0
+no shut
+do wr
+
+exit
+
+interface se2/0
+ip address 163.146.70.2 255.255.0.0
+no shut
+do wr
+
+exit
+
+interface se3/0
+ip address 163.146.80.1 255.255.0.0
+clock rate 64000
+no shut
+do wr
+
+exit
+
+interface se6/0
+ip address 163.146.120.2 255.255.0.0
+no shut
+do wr
+
+exit
+
+
+Campus 3
+
+interface fa0/0
+ip address 163.146.30.254 255.255.0.0
+no shut
+do wr
+
+exit
+
+interface se2/0
+ip address 163.146.90.2 255.255.0.0
+no shut
+do wr
+
+exit
+
+interface se3/0
+ip address 163.146.80.2 255.255.0.0
+clock rate 64000
+no shut
+do wr
+
+exit
+
+interface se6/0
+ip address 163.146.100.2 255.255.0.0
+no shut
+do wr
+
+exit
+
+
+Campus 4
+
+interface fa0/0
+ip address 163.146.40.254 255.255.0.0
+no shut
+do wr
+
+exit
+
+interface se2/0
+ip address 163.146.110.1 255.255.0.0
+clock rate 64000
+no shut
+do wr
+
+exit
+
+
+Campus 5
+
+interface fa0/0
+ip address 163.146.50.254 255.255.0.0
+no shut
+do wr
+
+exit
+
+interface se2/0
+ip address 163.146.120.1 255.255.0.0
+clock rate 64000
+no shut
+do wr
+
+exit
+
+
+Campus 6
+
+interface fa0/0
+ip address 163.146.60.254 255.255.0.0
+no shut
+do wr
+
+exit
+
+interface se2/0
+ip address 163.146.100.1 255.255.0.0
+clock rate 64000
+no shut
+do wr
+
+exit
+
+
+
+
+campus 1 for OSPF
+
+
+router OSPF 1
+
+network 163.146.10.0 0.0.255.255 area 1
+
+network 163.146.90.0 0.0.255.255 area 1
+
+network 163.146.70.0 0.0.255.255 area 1
+
+network 163.146.110.0 0.0.255.255 area 1
+
+exit
+
+
+campus 2 for OSPF
+
+
+router OSPF 2
+
+network 163.146.20.0 0.0.255.255 area 1
+
+network 163.146.80.0 0.0.255.255 area 1
+
+network 163.146.70.0 0.0.255.255 area 1
+
+network 163.146.120.0 0.0.255.255 area 1
+
+exit
+
+
+campus 3 for OSPF
+
+
+router OSPF 3
+
+network 163.146.30.0 0.0.255.255 area 1
+
+network 163.146.80.0 0.0.255.255 area 1
+
+network 163.146.90.0 0.0.255.255 area 1
+
+network 163.146.100.0 0.0.255.255 area 1
+
+exit
+
+
+campus 4 for OSPF
+
+router OSPF 4
+
+network 163.146.40.0 0.0.255.255 area 1
+
+network 163.146.110.0 0.0.255.255 area 1
+
+exit
+
+
+campus 5 for OSPF
+
+router OSPF 5
+
+network 163.146.50.0 0.0.255.255 area 1
+
+network 163.146.120.0 0.0.255.255 area 1
+
+exit
+
+
+campus 6 for OSPF
+
+router OSPF 6
+
+network 163.146.60.0 0.0.255.255 area 1
+
+network 163.146.100.0 0.0.255.255 area 1
+
+exit
